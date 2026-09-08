@@ -13,3 +13,7 @@ indent:
 mono:
 	emacs -Q -l ./valign.el --eval \
 '(progn (find-file "./test.org") (valign-mode))'
+
+.PHONY: test-batch
+test-batch:
+	emacs -Q --batch -L . -l valign-tests.el -f ert-run-tests-batch-and-exit
